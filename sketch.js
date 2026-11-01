@@ -81,8 +81,7 @@ function playChord(n) {
       y: random(height * 0.25, height * 0.75),
       speed: 5,
       size: random(24, 44),
-      symbol: random(["♪", "♫", "♬", "♩"]),
-      color: chordColors[played]
+      symbol: random(["♪", "♫", "♬", "♩"])
     });
   }
   strum();
