@@ -43,7 +43,7 @@ function draw() {
   textAlign(LEFT, TOP);
   text(chordNames[played], 30, 30);
   let gp = navigator.getGamepads()[0];
-  if (gp) {
+    if (gp) {
     controller(gp);
   }
 }
