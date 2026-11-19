@@ -45,8 +45,6 @@ function draw() {
   let gp = navigator.getGamepads()[0];
     if (gp) {
     controller(gp);
-  } else {
-    keyboardWhammy();
   }
 }
 
@@ -163,28 +161,6 @@ function controller(gp) {
   }
   let total = constrain(stickX + stickY, -1, 1);
   bend = 1 + total * 0.06;
-  chords[played].rate(bend);
-}
-
-function keyPressed() {
-  if (key === "1") playChord(0); // A
-  if (key === "2") playChord(1); // C
-  if (key === "3") playChord(2); // D
-  if (key === "4") playChord(3); // E
-  if (key === "5") playChord(4); // G
-  if (key === "6") playChord(5); // Am
-  if (key === "7") playChord(6); // Dm
-  if (key === "8") playChord(7); // Em
-}
-
-function keyboardWhammy() {
-  bend = 1;
-  if (keyIsDown(UP_ARROW)) {
-    bend = 1.06;
-  }
-  if (keyIsDown(DOWN_ARROW)) {
-    bend = 0.94;
-  }
   chords[played].rate(bend);
 }
 
